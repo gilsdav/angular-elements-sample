@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Elements</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+    <style>
+        angular-elem {
+            display: inline-block;
+        }
+    </style>
+
+    <angular-elem name="Sam"></angular-elem>
+    <angular-elem name="Jean"></angular-elem>
+    <script type="text/javascript" src="elements/angular-elem.js"></script>
+
+    <script>
+        const myElem =  document.getElementsByTagName('angular-elem')[0];
+        // Listen output
+        myElem.addEventListener('incrementChange', function({detail}) {console.log(detail);});
+        // Chante input
+        setTimeout(() => {
+            myElem.name = "Bob"
+        }, 3000);
+    </script>
+
+  </body>
+</html>
